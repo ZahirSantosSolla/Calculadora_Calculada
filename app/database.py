@@ -2,7 +2,7 @@ import os
 import asyncpg
 from datetime import datetime
 
-DATABASE_URL = os.getenv("postgresql://neondb_owner:npg_jI7S2koLdnsF@ep-orange-term-at82w3ik-pooler.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require", "")
+DATABASE_URL = os.getenv("DATABASE_URL", "")
 
 _pool = None
 
