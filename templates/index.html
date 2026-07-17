@@ -1,142 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lei Rouanet – Calculadora de Incentivo Fiscal</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/static/css/style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cofrinho | Lei Rouanet</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link rel="stylesheet" href="/static/css/style.css"/>
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="nav-inner">
-    <a href="/" class="logo">
-      <span class="logo-icon">🎭</span>
-      <span>Rouanet<em>Calc</em></span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="/">Calculadora</a></li>
-      <li><a href="/sobre">Sobre a Lei</a></li>
-      <li><a href="/faq">FAQ</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle">☰</button>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="hero-content">
-    <p class="eyebrow">Lei Federal nº 8.313/1991</p>
-    <h1>Transforme seu <span class="highlight">imposto</span><br/>em cultura</h1>
-    <p class="hero-sub">
-      Descubra em segundos quanto você pode destinar à cultura brasileira
-      sem pagar um centavo a mais ao governo.
-    </p>
-    <a href="#calculadora" class="btn-primary">Calcular agora ↓</a>
-  </div>
-  <div class="hero-visual">
-    <div class="stat-card">
-      <span class="stat-num">6%</span>
-      <span class="stat-label">máx. dedução Pessoa Física</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-num">4%</span>
-      <span class="stat-label">máx. dedução Pessoa Jurídica</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-num">R$0</span>
-      <span class="stat-label">custo real para o doador</span>
-    </div>
-  </div>
+<header id="header">
+  <img src="/static/images/banner1.png" alt="Cofrinho" class="header-logo" style="height:36px;object-fit:contain;filter:brightness(10)"/>
+  <nav id="mainNav">
+    <a href="/">Início</a>
+    <a href="#calculadora">Calculadora</a>
+    <a href="/sobre">Sobre a Lei</a>
+    <a href="/faq">FAQ</a>
+    <a href="/pages/login" class="btn-entrar">Minha conta</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle">☰</button>
 </header>
 
-<section class="how-it-works">
+<section class="hero-swiper swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="/static/images/banner1.png" alt="Banner 1" class="banner-img"/>
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <h2>Transforme seu imposto em cultura</h2>
+        <p>Descubra quanto você pode destinar via Lei Rouanet</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <img src="/static/images/banner2.png" alt="Banner 2" class="banner-img"/>
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <h2>Apoie a arte brasileira</h2>
+        <p>Sem pagar nada a mais — o governo patrocina por você</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <img src="/static/images/banner3.png" alt="Banner 3" class="banner-img"/>
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <h2>Lei Rouanet 2026</h2>
+        <p>Novos limites de isenção — calcule agora</p>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</section>
+
+<div class="quick-btns">
+  <div class="quick-btns-inner">
+    <a href="/sobre" class="quick-btn">
+      <span class="qb-title">COMO APOIAR</span>
+      <span class="qb-sub">Guia completo</span>
+    </a>
+    <a href="/sobre#mecanismos" class="quick-btn">
+      <span class="qb-title">LEI DE INCENTIVO<br/>ABATIMENTO FISCAL</span>
+      <span class="qb-sub">Entenda os benefícios</span>
+    </a>
+    <a href="/faq" class="quick-btn">
+      <span class="qb-title">DÚVIDAS FREQUENTES</span>
+      <span class="qb-sub">Tire suas dúvidas</span>
+    </a>
+    <a href="#calculadora" class="quick-btn">
+      <span class="qb-title">FAÇA O CÁLCULO<br/>DO SEU IMPOSTO</span>
+      <span class="qb-sub">Descubra quanto pode redirecionar</span>
+    </a>
+  </div>
+</div>
+
+<section class="section como-funciona">
   <div class="container">
-    <h2>Como funciona?</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-icon">💰</div>
+    <h2 class="section-title">Como funciona?</h2>
+    <div class="divider-line"></div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
         <h3>Você paga IR normalmente</h3>
-        <p>O valor do seu imposto é calculado pela Receita Federal.</p>
+        <p>O valor do seu imposto é calculado pela Receita Federal com base na sua renda.</p>
       </div>
-      <div class="step-arrow">→</div>
-      <div class="step">
-        <div class="step-icon">🎭</div>
+      <div class="step-card">
+        <div class="step-num">2</div>
         <h3>Decide destinar à cultura</h3>
-        <p>Escolhe um projeto cultural aprovado pelo MinC.</p>
+        <p>Escolhe um projeto cultural aprovado pelo Ministério da Cultura no sistema SALIC.</p>
       </div>
-      <div class="step-arrow">→</div>
-      <div class="step">
-        <div class="step-icon">📋</div>
-        <h3>Deduz no IR</h3>
-        <p>O valor doado é descontado diretamente do seu imposto devido.</p>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Transfere o recurso</h3>
+        <p>Deposita diretamente na conta do projeto com assinatura de contrato.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Deduz no imposto</h3>
+        <p>O valor doado é descontado do seu IR devido — custo real para você: R$ 0,00.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="calc-section" id="calculadora">
+<section class="section calculadora-section" id="calculadora">
   <div class="container">
-    <div class="calc-wrapper">
-      <div class="calc-header">
-        <h2>Calculadora Rouanet</h2>
-        <p>Preencha seus dados e veja o impacto cultural que você pode gerar.</p>
-      </div>
+    <h2 class="section-title" style="text-align:center">Calculadora Rouanet 2026</h2>
+    <p class="section-sub" style="text-align:center">Tabela atualizada com a nova isenção de até R$ 5.000/mês</p>
 
-      <form class="calc-form" id="calcForm">
-        <div class="field-group">
-          <label class="field-label">Você é:</label>
-          <div class="toggle-group">
-            <button type="button" class="toggle-btn active" data-val="pf" id="btnPF">
-              👤 Pessoa Física
-            </button>
-            <button type="button" class="toggle-btn" data-val="pj" id="btnPJ">
-              🏢 Pessoa Jurídica
-            </button>
+    <div class="calc-box">
+      <form id="calcForm">
+        <div class="tipo-toggle">
+          <button type="button" class="tipo-btn active" id="btnPF">👤 Pessoa Física</button>
+          <button type="button" class="tipo-btn" id="btnPJ">🏢 Pessoa Jurídica</button>
+        </div>
+        <input type="hidden" id="tipoContribuinte" value="pf"/>
+
+        <div class="field">
+          <label for="renda"><span id="rendaLabel">Renda Bruta Anual</span></label>
+          <div class="input-wrap">
+            <span class="input-prefix">R$</span>
+            <input type="text" id="renda" placeholder="Ex: 120.000,00" inputmode="numeric" autocomplete="off"/>
           </div>
-          <input type="hidden" id="tipoContribuinte" value="pf" />
+          <small class="field-hint" id="rendaHint">Sua renda tributável no ano (salários, pró-labore, aluguéis etc.)</small>
         </div>
 
-        <div class="field-group">
-          <label class="field-label" for="renda">
-            <span id="rendaLabel">Renda Bruta Anual (R$)</span>
-          </label>
+        <div class="field">
+          <label for="irDevido">Imposto devido <span class="optional">— opcional</span></label>
           <div class="input-wrap">
-            <span class="prefix">R$</span>
-            <input
-              type="text"
-              id="renda"
-              class="field-input"
-              placeholder="Ex: 120.000,00"
-              inputmode="numeric"
-              autocomplete="off"
-            />
+            <span class="input-prefix">R$</span>
+            <input type="text" id="irDevido" placeholder="Deixe em branco para estimarmos" inputmode="numeric" autocomplete="off"/>
           </div>
-          <small class="field-hint" id="rendaHint">
-            Sua renda tributável total no ano (salários, pró-labore, aluguéis etc.)
-          </small>
-        </div>
-
-        <div class="field-group" id="grupoIR">
-          <label class="field-label" for="irDevido">
-            Imposto devido (R$) <span class="optional">– opcional</span>
-          </label>
-          <div class="input-wrap">
-            <span class="prefix">R$</span>
-            <input
-              type="text"
-              id="irDevido"
-              class="field-input"
-              placeholder="Deixe em branco para estimarmos"
-              inputmode="numeric"
-              autocomplete="off"
-            />
-          </div>
-          <small class="field-hint">
-            Se você já tem o valor do IR calculado na sua declaração, informe aqui para maior precisão.
-          </small>
+          <small class="field-hint">Se já tem o valor na declaração, informe para maior precisão.</small>
         </div>
 
         <button type="submit" class="btn-calcular" id="btnCalc">
@@ -150,82 +144,140 @@
           <span class="result-emoji">🎉</span>
           <h3>Seu potencial de impacto cultural</h3>
         </div>
-
         <div class="result-grid">
-          <div class="result-card main">
+          <div class="rc main">
             <span class="rc-label">Valor máximo que pode doar</span>
-            <span class="rc-value green" id="resValorMax">—</span>
-            <span class="rc-sub" id="resPct">—% do seu imposto devido</span>
+            <span class="rc-value" id="resValorMax">—</span>
+            <span class="rc-sub" id="resPct">—</span>
           </div>
-          <div class="result-card">
+          <div class="rc">
             <span class="rc-label">Imposto devido estimado</span>
             <span class="rc-value" id="resIR">—</span>
           </div>
-          <div class="result-card">
+          <div class="rc">
             <span class="rc-label">Economia fiscal</span>
             <span class="rc-value" id="resEconomia">—</span>
           </div>
-          <div class="result-card highlight-card">
+          <div class="rc destaque">
             <span class="rc-label">Custo real da doação para você</span>
-            <span class="rc-value gold" id="resCusto">R$ 0,00</span>
+            <span class="rc-value" id="resCusto">R$ 0,00</span>
             <span class="rc-sub">O governo paga por você!</span>
           </div>
         </div>
-
         <div class="obs-box" id="resObs"></div>
-
         <div class="result-actions">
-          <button class="btn-secondary" onclick="compartilhar()">📤 Compartilhar resultado</button>
-          <button class="btn-outline" onclick="resetar()">🔄 Nova simulação</button>
+          <button class="btn-sec btn-sec-gold" onclick="compartilhar()">📤 Compartilhar</button>
+          <button class="btn-sec btn-sec-outline" onclick="resetar()">🔄 Nova simulação</button>
         </div>
       </div>
 
       <div class="error-panel hidden" id="errorPanel">
-        <span>⚠️</span> <span id="errorMsg">Erro ao calcular.</span>
+        <span>⚠️</span><span id="errorMsg">Erro ao calcular.</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="disclaimer">
+<section class="section stats-section">
   <div class="container">
-    <p>
-      ⚖️ <strong>Importante:</strong> Esta calculadora é uma ferramenta educativa e de estimativa.
-      Os valores são baseados na tabela progressiva do IRPF 2024 e nas regras gerais da Lei Rouanet.
-      Consulte sempre um contador ou advogado tributarista antes de tomar decisões financeiras.
-    </p>
+    <div class="stats-grid">
+      <div>
+        <span class="stat-num">R$ 1,8 bi</span>
+        <span class="stat-label">captados pela Lei Rouanet em 2023</span>
+      </div>
+      <div>
+        <span class="stat-num">6.400+</span>
+        <span class="stat-label">projetos culturais aprovados por ano</span>
+      </div>
+      <div>
+        <span class="stat-num">R$ 0</span>
+        <span class="stat-label">custo real para o doador</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<footer class="footer">
+<section class="section faq-section">
   <div class="container">
-    <div class="footer-grid">
-      <div>
-        <p class="footer-logo">🎭 RouanetCalc</p>
-        <p>Incentivando a cultura brasileira através da informação.</p>
+    <h2 class="section-title">Dúvidas frequentes</h2>
+    <div class="divider-line"></div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Eu pago mais imposto ao usar a Lei Rouanet?</button>
+        <div class="faq-a">Não. Você redireciona parte do imposto que <em>já iria pagar</em> ao governo para um projeto cultural. O custo real para você é R$ 0,00.</div>
       </div>
-      <div>
-        <p class="footer-title">Links úteis</p>
+      <div class="faq-item">
+        <button class="faq-q">A isenção de R$ 5.000/mês já vale?</button>
+        <div class="faq-a">A isenção para rendas de até R$ 5.000/mês foi aprovada para 2026. Nossa calculadora já usa esta tabela atualizada. Quem está nessa faixa não tem imposto a redirecionar.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Empresa do Simples Nacional pode usar?</button>
+        <div class="faq-a">Não. O benefício fiscal para PJ é exclusivo do regime Lucro Real. Simples Nacional e Lucro Presumido não se enquadram.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="/faq" class="btn-gold">Ver todas as dúvidas →</a>
+    </div>
+  </div>
+</section>
+
+<div class="aviso">
+  ⚖️ <strong>Aviso:</strong> Esta calculadora é uma ferramenta educativa e de estimativa. Consulte sempre um contador antes de tomar decisões fiscais.
+</div>
+
+<footer>
+  <div class="footer-wrapper">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <p class="footer-logo-text">🐷 Cofrinho</p>
+        <p>Incentivando a cultura brasileira através da informação e do acesso à Lei Rouanet.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fas fa-newspaper"></i></a>
+          <a href="https://wa.me/55XXXXXXXXXXX" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h4>Projetos</h4>
         <ul>
-          <li><a href="https://salic.cultura.gov.br" target="_blank" rel="noopener">SALIC – Sistema de Apoio às Leis de Incentivo</a></li>
-          <li><a href="https://www.gov.br/cultura/pt-br" target="_blank" rel="noopener">Ministério da Cultura</a></li>
-          <li><a href="https://www.receita.fazenda.gov.br" target="_blank" rel="noopener">Receita Federal</a></li>
+          <li><a href="#">Nossa Missão</a></li>
+          <li><a href="#">Projetos Concluídos</a></li>
+          <li><a href="#">Projetos Ativos</a></li>
+          <li><a href="#">Resultados</a></li>
         </ul>
       </div>
-      <div>
-        <p class="footer-title">Navegação</p>
+      <div class="footer-column">
+        <h4>Comunidade</h4>
         <ul>
-          <li><a href="/">Calculadora</a></li>
-          <li><a href="/sobre">Sobre a Lei</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Eventos</a></li>
           <li><a href="/faq">FAQ</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Ajuda</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Termos de Serviço</a></li>
+          <li><a href="https://salic.cultura.gov.br" target="_blank">SALIC</a></li>
         </ul>
       </div>
     </div>
-    <hr class="footer-hr" />
-    <p class="footer-copy">© 2026 RouanetCalc · Feito para Diminuir seu imposto</p>
+    <hr class="footer-hr"/>
+    <p class="footer-copy">© 2026 Cofrinho. Todos os direitos reservados.</p>
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  new Swiper('.swiper', {
+    loop: true,
+    autoplay: { delay: 5000, disableOnInteraction: false },
+    pagination: { el: '.swiper-pagination', clickable: true },
+  });
+</script>
 <script src="/static/js/main.js"></script>
 </body>
 </html>

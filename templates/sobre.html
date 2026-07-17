@@ -1,170 +1,134 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre a Lei Rouanet – RouanetCalc</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/static/css/style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre a Lei Rouanet | Cofrinho</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link rel="stylesheet" href="/static/css/style.css"/>
 </head>
 <body>
-
-<nav class="navbar">
-  <div class="nav-inner">
-    <a href="/" class="logo">
-      <span class="logo-icon">🎭</span>
-      <span>Rouanet<em>Calc</em></span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="/">Calculadora</a></li>
-      <li><a href="/sobre" class="active">Sobre a Lei</a></li>
-      <li><a href="/faq">FAQ</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle">☰</button>
-  </div>
-</nav>
+<header id="header">
+  <span class="footer-logo-text" style="font-size:1.2rem">🐷 Cofrinho</span>
+  <nav id="mainNav">
+    <a href="/">Início</a>
+    <a href="/#calculadora">Calculadora</a>
+    <a href="/sobre" class="active">Sobre a Lei</a>
+    <a href="/faq">FAQ</a>
+    <a href="/pages/login" class="btn-entrar">Minha conta</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle">☰</button>
+</header>
 
 <div class="page-hero">
-  <div class="container">
-    <p class="eyebrow">Entenda</p>
-    <h1>A Lei Rouanet</h1>
-    <p>Tudo o que você precisa saber sobre o maior mecanismo de incentivo cultural do Brasil.</p>
-  </div>
+  <div class="eyebrow">Entenda</div>
+  <h1>A Lei Rouanet</h1>
+  <p>O maior mecanismo de incentivo cultural do Brasil — atualizado para 2026.</p>
 </div>
 
-<main class="content-page">
-  <div class="container content-narrow">
+<main>
+  <div class="container-sm">
 
-    <section class="content-section">
+    <div class="content-section">
       <h2>O que é a Lei Rouanet?</h2>
-      <p>
-        A <strong>Lei nº 8.313, de 23 de dezembro de 1991</strong>, conhecida como Lei Rouanet
-        (em homenagem ao seu idealizador, Sérgio Paulo Rouanet), instituiu o
-        <strong>Programa Nacional de Apoio à Cultura (PRONAC)</strong>.
-      </p>
-      <p>
-        É o principal instrumento de política cultural do Brasil e permite que pessoas físicas
-        e jurídicas destinem parte do seu Imposto de Renda para projetos culturais aprovados
-        pelo Ministério da Cultura, obtendo uma dedução fiscal equivalente ao valor doado.
-      </p>
-    </section>
+      <div class="divider-line"></div>
+      <p>A <strong>Lei nº 8.313, de 23 de dezembro de 1991</strong>, conhecida como Lei Rouanet (em homenagem ao seu idealizador, Sérgio Paulo Rouanet), instituiu o <strong>Programa Nacional de Apoio à Cultura (PRONAC)</strong>.</p>
+      <p>É o principal instrumento de política cultural do Brasil. Permite que pessoas físicas e jurídicas destinem parte do seu Imposto de Renda para projetos culturais aprovados pelo Ministério da Cultura, obtendo dedução fiscal equivalente ao valor doado.</p>
+    </div>
 
-    <section class="content-section">
+    <div class="content-section" id="mecanismos">
       <h2>Mecanismos do PRONAC</h2>
+      <div class="divider-line"></div>
       <div class="info-cards">
         <div class="info-card">
           <h3>🎭 Mecenato</h3>
-          <p>
-            O principal mecanismo. Empresas e pessoas físicas patrocinam ou doam para projetos
-            culturais e obtêm dedução no Imposto de Renda. <strong>É o mecanismo da calculadora.</strong>
-          </p>
+          <p>Principal mecanismo. Empresas e PF patrocinam projetos e obtêm dedução no IR. <strong>É o mecanismo desta calculadora.</strong></p>
         </div>
         <div class="info-card">
           <h3>🏛️ FNC</h3>
-          <p>
-            Fundo Nacional da Cultura. Recursos públicos destinados a projetos culturais
-            via editais e convênios com estados e municípios.
-          </p>
+          <p>Fundo Nacional da Cultura. Recursos públicos via editais e convênios com estados e municípios.</p>
         </div>
         <div class="info-card">
           <h3>💼 FICART</h3>
-          <p>
-            Fundos de Investimento Cultural e Artístico. Mecanismo de menor utilização prática,
-            voltado a projetos de natureza comercial.
-          </p>
+          <p>Fundos de Investimento Cultural. Voltado a projetos de natureza comercial, de menor utilização.</p>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="content-section">
-      <h2>Limites de dedução</h2>
-      <div class="table-wrap">
+    <div class="content-section">
+      <h2>Tabela IRPF 2026 — Nova isenção</h2>
+      <div class="divider-line"></div>
+      <p>A partir de 2026, a faixa de isenção do IRPF foi ampliada para <strong>R$ 5.000/mês</strong> (R$ 60.000/ano). Quem recebe abaixo desse valor não paga imposto e, portanto, não pode usar a Lei Rouanet para doação.</p>
+      <div style="overflow-x:auto;margin:1.2rem 0">
         <table class="styled-table">
           <thead>
-            <tr>
-              <th>Tipo de apoio</th>
-              <th>Pessoa Física</th>
-              <th>Pessoa Jurídica (Lucro Real)</th>
-            </tr>
+            <tr><th>Renda mensal</th><th>Renda anual</th><th>Alíquota</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Doação (sem contrapartida)</td>
-              <td>6% do IR devido</td>
-              <td>4% do IRPJ devido</td>
-            </tr>
-            <tr>
-              <td>Patrocínio (com contrapartida)</td>
-              <td>6% do IR devido</td>
-              <td>4% do IRPJ devido</td>
-            </tr>
+            <tr><td>Até R$ 5.000</td><td>Até R$ 60.000</td><td>Isento ✓</td></tr>
+            <tr><td>R$ 5.000,01 a R$ 7.786,02</td><td>R$ 60.001 a R$ 93.432</td><td>7,5%</td></tr>
+            <tr><td>R$ 7.786,03 a R$ 10.371,24</td><td>R$ 93.433 a R$ 124.455</td><td>15%</td></tr>
+            <tr><td>R$ 10.371,25 a R$ 12.954,34</td><td>R$ 124.456 a R$ 155.452</td><td>22,5%</td></tr>
+            <tr><td>Acima de R$ 12.954,34</td><td>Acima de R$ 155.453</td><td>27,5%</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="table-note">
-        * Para PF, a dedução só é válida na <strong>declaração completa</strong> do IRPF.
-        Não se aplica ao modelo simplificado (desconto padrão).
-      </p>
-    </section>
+    </div>
 
-    <section class="content-section">
-      <h2>Áreas culturais contempladas</h2>
-      <div class="tag-cloud">
-        <span class="tag">Teatro</span>
-        <span class="tag">Dança</span>
-        <span class="tag">Música</span>
-        <span class="tag">Cinema</span>
-        <span class="tag">Circo</span>
-        <span class="tag">Ópera</span>
-        <span class="tag">Literatura</span>
-        <span class="tag">Fotografia</span>
-        <span class="tag">Patrimônio histórico</span>
-        <span class="tag">Museus</span>
-        <span class="tag">Artes plásticas</span>
-        <span class="tag">Exposições</span>
-        <span class="tag">Acervo audiovisual</span>
-        <span class="tag">Rádio comunitária</span>
+    <div class="content-section">
+      <h2>Limites de dedução via Rouanet</h2>
+      <div class="divider-line"></div>
+      <div style="overflow-x:auto">
+        <table class="styled-table">
+          <thead>
+            <tr><th>Tipo de apoio</th><th>Pessoa Física</th><th>Pessoa Jurídica (Lucro Real)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Doação (sem contrapartida)</td><td>Até 6% do IR devido</td><td>Até 4% do IRPJ devido</td></tr>
+            <tr><td>Patrocínio (com contrapartida de imagem)</td><td>Até 6% do IR devido</td><td>Até 4% do IRPJ devido</td></tr>
+          </tbody>
+        </table>
       </div>
-    </section>
+      <p style="margin-top:.75rem;font-size:.82rem;color:#666">* Para PF: válido apenas na declaração completa do IRPF. Não se aplica ao modelo simplificado.</p>
+    </div>
 
-    <section class="content-section">
+    <div class="content-section">
+      <h2>Áreas culturais contempladas</h2>
+      <div class="divider-line"></div>
+      <div class="tag-cloud">
+        <span class="tag">Teatro</span><span class="tag">Dança</span><span class="tag">Música</span>
+        <span class="tag">Cinema</span><span class="tag">Circo</span><span class="tag">Ópera</span>
+        <span class="tag">Literatura</span><span class="tag">Fotografia</span>
+        <span class="tag">Patrimônio histórico</span><span class="tag">Museus</span>
+        <span class="tag">Artes plásticas</span><span class="tag">Exposições</span>
+        <span class="tag">Acervo audiovisual</span><span class="tag">Rádio comunitária</span>
+      </div>
+    </div>
+
+    <div class="content-section">
       <h2>Como apoiar um projeto?</h2>
+      <div class="divider-line"></div>
       <ol class="numbered-steps">
-        <li>
-          <strong>Encontre projetos aprovados</strong> no sistema
-          <a href="https://salic.cultura.gov.br" target="_blank" rel="noopener">SALIC</a>
-          do Ministério da Cultura.
-        </li>
-        <li>
-          <strong>Escolha como apoiar:</strong> doação (sem retorno de imagem) ou
-          patrocínio (com direito a expor a marca).
-        </li>
-        <li>
-          <strong>Transfira o recurso</strong> diretamente para a conta do projeto,
-          após a assinatura de um contrato de patrocínio ou termo de doação.
-        </li>
-        <li>
-          <strong>Guarde a documentação</strong> (recibo, contrato, comprovante de depósito)
-          para apresentar à Receita Federal.
-        </li>
-        <li>
-          <strong>Declare na DIRPF ou ECF</strong> e aproveite a dedução no imposto devido.
-        </li>
+        <li><strong>Encontre projetos aprovados</strong> no sistema <a href="https://salic.cultura.gov.br" target="_blank" rel="noopener">SALIC</a> do Ministério da Cultura.</li>
+        <li><strong>Escolha como apoiar:</strong> doação (sem retorno de imagem) ou patrocínio (com direito a expor a marca).</li>
+        <li><strong>Transfira o recurso</strong> diretamente para a conta do projeto, com contrato assinado.</li>
+        <li><strong>Guarde a documentação</strong> (recibo, contrato, comprovante) para apresentar à Receita Federal.</li>
+        <li><strong>Declare na DIRPF ou ECF</strong> e aproveite a dedução.</li>
       </ol>
-    </section>
+    </div>
 
     <div class="cta-banner">
       <h3>Quer saber quanto você pode destinar?</h3>
-      <a href="/" class="btn-primary">Usar a calculadora →</a>
+      <a href="/#calculadora" class="btn-gold">Usar a calculadora →</a>
     </div>
 
   </div>
 </main>
 
-<footer class="footer">
-  <div class="container">
-    <p class="footer-copy">© 2026 RouanetCalc · <a href="/">Voltar à calculadora</a></p>
+<footer>
+  <div class="footer-wrapper">
+    <hr class="footer-hr"/>
+    <p class="footer-copy">© 2026 Cofrinho · <a href="/">Voltar ao início</a></p>
   </div>
 </footer>
 

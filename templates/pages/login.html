@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Cofrinho</title>
+  <link rel="stylesheet" href="/static/css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <style>
+    body { min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#0d0d0d; padding:2rem; }
+    .login-box { width:100%; max-width:960px; min-height:580px; background:rgba(255,255,255,.04); border:1px solid #2a2a2a; border-radius:24px; overflow:hidden; display:flex; box-shadow:0 30px 80px rgba(0,0,0,.6); }
+    .login-left { width:42%; background:linear-gradient(180deg,#bf895c,#855d3d,#5d422b); color:#fff; padding:3.5rem; display:flex; flex-direction:column; justify-content:space-between; }
+    .login-left h2 { font-size:2rem; font-weight:900; margin-bottom:1rem; }
+    .login-left p { color:rgba(255,255,255,.8); line-height:1.7; }
+    .login-features { display:flex; flex-direction:column; gap:1rem; margin-top:1rem; }
+    .login-feat { display:flex; align-items:center; gap:1rem; padding:1rem; border-radius:12px; background:rgba(255,255,255,.08); }
+    .login-feat i { width:42px; height:42px; border-radius:50%; background:#fff; color:#a35841; display:flex; align-items:center; justify-content:center; font-size:1.1rem; }
+    .login-right { flex:1; background:rgba(255,255,255,.97); color:#111; padding:3rem; display:flex; align-items:center; justify-content:center; }
+    .form-box { width:100%; max-width:400px; }
+    .form-box h2 { font-size:1.8rem; font-weight:900; color:#111; margin-bottom:.3rem; }
+    .form-box .sub { color:#777; margin-bottom:2rem; }
+    .form-container { display:none; animation:fadeUp .35s ease; }
+    .form-container.active { display:block; }
+    .inp-grp { position:relative; margin-bottom:1rem; }
+    .inp-grp i:first-child { position:absolute; left:16px; top:50%; transform:translateY(-50%); color:#999; }
+    .inp-grp input { width:100%; height:52px; border:none; background:#f4f5fa; border-radius:12px; padding:0 50px 0 46px; font-size:.95rem; transition:.2s; }
+    .inp-grp input:focus { outline:none; background:#fff; box-shadow:0 0 0 2px #d47944; }
+    .toggle-pw { position:absolute; right:14px; top:50%; transform:translateY(-50%); border:none; background:none; cursor:pointer; color:#999; }
+    .opts { display:flex; justify-content:space-between; align-items:center; margin:1rem 0; font-size:.85rem; }
+    .opts a { color:#d47944; font-weight:600; text-decoration:none; }
+    .btn-login { width:100%; height:52px; border:none; border-radius:12px; background:linear-gradient(135deg,#96531f,#d47944); color:#fff; font-size:1rem; font-weight:700; cursor:pointer; transition:.2s; margin-top:.5rem; }
+    .btn-login:hover { filter:brightness(1.1); transform:translateY(-2px); }
+    .divider { display:flex; align-items:center; margin:1.5rem 0; }
+    .divider::before,.divider::after { content:""; flex:1; height:1px; background:#e5e5e5; }
+    .divider span { padding:0 1rem; color:#aaa; font-size:.82rem; }
+    .btn-google { width:100%; height:50px; border:1px solid #ddd; background:#fff; border-radius:12px; display:flex; align-items:center; justify-content:center; gap:.75rem; font-size:.92rem; font-weight:600; cursor:pointer; }
+    .btn-google:hover { background:#f5f5f5; }
+    .btn-google i { color:#d47944; }
+    .switch { text-align:center; margin-top:1.5rem; font-size:.88rem; color:#666; }
+    .switch a { color:#d47944; font-weight:700; text-decoration:none; }
+    .terms-label { display:flex; gap:.5rem; font-size:.82rem; color:#666; margin:.5rem 0 1rem; align-items:flex-start; line-height:1.5; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+    @media(max-width:768px){ .login-left{display:none} .login-right{padding:2rem} .login-box{border-radius:16px} }
+  </style>
+</head>
+<body>
+<div class="login-box">
+  <div class="login-left">
+    <div>
+      <p style="font-size:1.8rem;font-weight:900;margin-bottom:1.5rem">🐷 Cofrinho</p>
+      <h2>Apoie a cultura brasileira</h2>
+      <p>Calcule quanto você pode doar, acompanhe os projetos e faça a diferença através das suas doações.</p>
+    </div>
+    <div class="login-features">
+      <div class="login-feat"><i class="fa-solid fa-piggy-bank"></i><span>Conheça o cofrinho</span></div>
+      <div class="login-feat"><i class="fa-solid fa-calculator"></i><span>Calcule quanto pode doar</span></div>
+      <div class="login-feat"><i class="fa-solid fa-heart"></i><span>Apoie projetos culturais</span></div>
+    </div>
+  </div>
+  <div class="login-right">
+    <div class="form-box">
+      <div class="form-container active" id="loginForm">
+        <h2>Bem-vindo!</h2>
+        <p class="sub">Faça login para acessar sua conta.</p>
+        <form id="frmLogin">
+          <div class="inp-grp"><i class="fa-solid fa-envelope"></i><input type="email" id="loginEmail" placeholder="Seu e-mail" autocomplete="email"/></div>
+          <div class="inp-grp"><i class="fa-solid fa-lock"></i><input type="password" id="loginPassword" placeholder="Sua senha"/><button type="button" class="toggle-pw"><i class="fa-solid fa-eye"></i></button></div>
+          <div class="opts"><label><input type="checkbox"/> Lembrar de mim</label><a href="#">Esqueceu a senha?</a></div>
+          <button type="submit" class="btn-login">Entrar</button>
+        </form>
+        <div class="divider"><span>ou</span></div>
+        <button class="btn-google"><i class="fa-brands fa-google"></i> Entrar com Google</button>
+        <p class="switch">Ainda não tem conta? <a href="#" id="showReg">Criar Conta</a></p>
+      </div>
+      <div class="form-container" id="registerForm">
+        <h2>Criar Conta</h2>
+        <p class="sub">Crie sua conta gratuitamente.</p>
+        <form id="frmReg">
+          <div class="inp-grp"><i class="fa-solid fa-user"></i><input type="text" id="regNome" placeholder="Nome completo"/></div>
+          <div class="inp-grp"><i class="fa-solid fa-envelope"></i><input type="email" id="regEmail" placeholder="Seu e-mail"/></div>
+          <div class="inp-grp"><i class="fa-solid fa-lock"></i><input type="password" id="regSenha" placeholder="Crie uma senha"/><button type="button" class="toggle-pw"><i class="fa-solid fa-eye"></i></button></div>
+          <div class="inp-grp"><i class="fa-solid fa-lock"></i><input type="password" id="regConfirm" placeholder="Confirme sua senha"/><button type="button" class="toggle-pw"><i class="fa-solid fa-eye"></i></button></div>
+          <label class="terms-label"><input type="checkbox" id="regTermos"/> Concordo com os Termos de Uso e Política de Privacidade.</label>
+          <button type="submit" class="btn-login">Criar Conta</button>
+        </form>
+        <p class="switch">Já tem conta? <a href="#" id="showLogin">Fazer Login</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+const loginForm = document.getElementById('loginForm');
+const registerForm = document.getElementById('registerForm');
+document.getElementById('showReg').addEventListener('click', e => { e.preventDefault(); loginForm.classList.remove('active'); registerForm.classList.add('active'); });
+document.getElementById('showLogin').addEventListener('click', e => { e.preventDefault(); registerForm.classList.remove('active'); loginForm.classList.add('active'); });
+document.querySelectorAll('.toggle-pw').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const inp = btn.parentElement.querySelector('input');
+    const ico = btn.querySelector('i');
+    inp.type = inp.type === 'password' ? 'text' : 'password';
+    ico.classList.toggle('fa-eye');
+    ico.classList.toggle('fa-eye-slash');
+  });
+});
+function emailOk(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+document.getElementById('frmLogin').addEventListener('submit', e => {
+  e.preventDefault();
+  const em = document.getElementById('loginEmail').value.trim();
+  const pw = document.getElementById('loginPassword').value.trim();
+  if(!em||!pw){alert('Preencha todos os campos.');return;}
+  if(!emailOk(em)){alert('E-mail inválido.');return;}
+  const btn = e.target.querySelector('.btn-login');
+  btn.disabled=true; btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Entrando...';
+  setTimeout(()=>{btn.disabled=false;btn.innerHTML='Entrar';alert('Login realizado! (simulação)');},1500);
+});
+document.getElementById('frmReg').addEventListener('submit', e => {
+  e.preventDefault();
+  const nome=document.getElementById('regNome').value.trim();
+  const em=document.getElementById('regEmail').value.trim();
+  const pw=document.getElementById('regSenha').value;
+  const cf=document.getElementById('regConfirm').value;
+  const tr=document.getElementById('regTermos');
+  if(!nome||!em||!pw||!cf){alert('Preencha todos os campos.');return;}
+  if(!emailOk(em)){alert('E-mail inválido.');return;}
+  if(pw.length<6){alert('Senha deve ter ao menos 6 caracteres.');return;}
+  if(pw!==cf){alert('Senhas não coincidem.');return;}
+  if(!tr.checked){alert('Aceite os termos para continuar.');return;}
+  const btn=e.target.querySelector('.btn-login');
+  btn.disabled=true;btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Criando conta...';
+  setTimeout(()=>{btn.disabled=false;btn.innerHTML='Criar Conta';alert('Conta criada! (simulação)');e.target.reset();registerForm.classList.remove('active');loginForm.classList.add('active');},1800);
+});
+</script>
+</body>
+</html>

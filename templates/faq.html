@@ -1,149 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ – Perguntas Frequentes | RouanetCalc</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/static/css/style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ | Cofrinho</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+ <link rel="stylesheet" href="/static/css/style.css"/>
 </head>
 <body>
-
-<nav class="navbar">
-  <div class="nav-inner">
-    <a href="/" class="logo">
-      <span class="logo-icon">🎭</span>
-      <span>Rouanet<em>Calc</em></span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="/">Calculadora</a></li>
-      <li><a href="/sobre">Sobre a Lei</a></li>
-      <li><a href="/faq" class="active">FAQ</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle">☰</button>
-  </div>
-</nav>
+<header id="header">
+  <span class="footer-logo-text" style="font-size:1.2rem">🐷 Cofrinho</span>
+  <nav id="mainNav">
+    <a href="/">Início</a>
+    <a href="/#calculadora">Calculadora</a>
+    <a href="/sobre">Sobre a Lei</a>
+    <a href="/faq" class="active">FAQ</a>
+    <a href="/pages/login" class="btn-entrar">Minha conta</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle">☰</button>
+</header>
 
 <div class="page-hero">
-  <div class="container">
-    <p class="eyebrow">Dúvidas?</p>
-    <h1>Perguntas Frequentes</h1>
-    <p>Respostas diretas sobre a Lei Rouanet e como ela funciona na prática.</p>
-  </div>
+  <div class="eyebrow">Dúvidas?</div>
+  <h1>Perguntas Frequentes</h1>
+  <p>Respostas diretas sobre a Lei Rouanet e os cálculos de 2026.</p>
 </div>
 
-<main class="content-page">
-  <div class="container content-narrow">
-    <div class="faq-list" id="faqList">
+<main class="section faq-section" style="padding-top:3rem">
+  <div class="container-sm">
+    <div class="faq-list">
 
       <div class="faq-item">
         <button class="faq-q">Eu pago mais imposto ao usar a Lei Rouanet?</button>
-        <div class="faq-a">
-          <p>
-            <strong>Não.</strong> Você não paga nada a mais. O mecanismo funciona assim:
-            uma parcela do imposto que você <em>já iria pagar</em> ao governo é redirecionada
-            para um projeto cultural. O resultado financeiro para você é neutro –
-            por isso dizemos que o custo real da doação é <strong>R$ 0,00</strong>.
-          </p>
-        </div>
+        <div class="faq-a"><strong>Não.</strong> Uma parcela do imposto que você <em>já iria pagar</em> ao governo é redirecionada para um projeto cultural. O resultado financeiro para você é neutro — custo real: R$ 0,00.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">A isenção de R$ 5.000/mês já está em vigor em 2026?</button>
+        <div class="faq-a">Sim. A nova faixa de isenção para rendas até R$ 5.000/mês (R$ 60.000/ano) foi aprovada e está vigente em 2026. Nossa calculadora já usa esta tabela. Quem recebe até esse valor não tem IR a redirecionar via Lei Rouanet.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">Quem pode usar a Lei Rouanet?</button>
-        <div class="faq-a">
-          <p>
-            <strong>Pessoa Física:</strong> qualquer contribuinte que declare o IRPF no
-            modelo completo (não simplificado) e tenha imposto a pagar.<br/><br/>
-            <strong>Pessoa Jurídica:</strong> empresas tributadas pelo Lucro Real. Optantes
-            pelo Simples Nacional ou Lucro Presumido <em>não</em> podem utilizar o benefício.
-          </p>
-        </div>
+        <div class="faq-a"><strong>Pessoa Física:</strong> qualquer contribuinte com IR a pagar que declare no modelo completo (não simplificado).<br/><br/><strong>Pessoa Jurídica:</strong> empresas no Lucro Real. Simples Nacional e Lucro Presumido não se enquadram.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">Como encontro projetos para apoiar?</button>
-        <div class="faq-a">
-          <p>
-            Todos os projetos aprovados estão listados no
-            <a href="https://salic.cultura.gov.br" target="_blank" rel="noopener">SALIC</a>
-            (Sistema de Apoio às Leis de Incentivo à Cultura). Você pode filtrar por área,
-            estado, data de captação e valor disponível.
-          </p>
-        </div>
+        <div class="faq-a">Todos os projetos aprovados estão no <a href="https://salic.cultura.gov.br" target="_blank">SALIC</a> (Sistema de Apoio às Leis de Incentivo à Cultura). Filtre por área, estado, data de captação e valor disponível.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">Qual a diferença entre doação e patrocínio?</button>
-        <div class="faq-a">
-          <p>
-            <strong>Doação:</strong> transferência de recursos sem expectativa de retorno de imagem.
-            Dedução de até 100% do valor doado (dentro do limite de 6%/4% do IR).<br/><br/>
-            <strong>Patrocínio:</strong> o apoiador recebe contrapartidas de visibilidade
-            (logotipo em materiais, menção em peças de comunicação etc.).
-            Também com dedução de até 100% dentro dos mesmos limites.
-          </p>
-        </div>
+        <div class="faq-a"><strong>Doação:</strong> transferência sem expectativa de retorno de imagem.<br/><strong>Patrocínio:</strong> o apoiador recebe contrapartidas de visibilidade (logo em materiais, menções etc.). Ambos têm o mesmo limite de dedução.</div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q">A calculadora deste site é 100% precisa?</button>
-        <div class="faq-a">
-          <p>
-            A calculadora usa a tabela progressiva oficial do IRPF 2024 e as regras vigentes
-            da Lei Rouanet. Entretanto, o cálculo do IR real depende de diversas deduções
-            pessoais (dependentes, plano de saúde, previdência etc.) que não foram informadas.
-            Use os valores como <strong>estimativa orientativa</strong> e consulte um contador
-            para a declaração definitiva.
-          </p>
-        </div>
+        <button class="faq-q">A calculadora é 100% precisa?</button>
+        <div class="faq-a">A calculadora usa a tabela IRPF 2026 oficial e as regras vigentes. Porém, o IR real depende de deduções pessoais (dependentes, saúde, previdência) que não foram informadas. Use como <strong>estimativa orientativa</strong> e confirme com um contador.</div>
       </div>
 
       <div class="faq-item">
-        <button class="faq-q">Posso apoiar qualquer valor até o limite?</button>
-        <div class="faq-a">
-          <p>
-            Sim. Você pode dividir o limite entre vários projetos ou concentrar em um único.
-            O importante é que a soma total dos valores doados/patrocinados não ultrapasse
-            o percentual permitido do seu imposto devido.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">Existe um valor mínimo de doação?</button>
-        <div class="faq-a">
-          <p>
-            A lei não estabelece valor mínimo. Cada projeto pode definir um valor mínimo
-            internamente para viabilizar as contrapartidas. Consulte diretamente o
-            responsável pelo projeto de interesse.
-          </p>
-        </div>
+        <button class="faq-q">Existe valor mínimo de doação?</button>
+        <div class="faq-a">A lei não estipula mínimo. Cada projeto pode definir internamente. Você pode dividir o limite entre vários projetos ou concentrar em um único.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">Empresa do Simples Nacional pode usar?</button>
-        <div class="faq-a">
-          <p>
-            <strong>Não.</strong> O benefício fiscal da Lei Rouanet para Pessoa Jurídica
-            está restrito a empresas no regime de Lucro Real. O Simples Nacional e o
-            Lucro Presumido têm formas de tributação distintas e não contemplam essa dedução.
-          </p>
-        </div>
+        <div class="faq-a"><strong>Não.</strong> O benefício para PJ é restrito ao Lucro Real. O Simples tem tributação unificada que não contempla essa dedução.</div>
       </div>
 
     </div>
 
     <div class="cta-banner" style="margin-top:3rem">
       <h3>Pronto para calcular sua dedução?</h3>
-      <a href="/" class="btn-primary">Ir para a calculadora →</a>
+      <a href="/#calculadora" class="btn-gold">Ir para a calculadora →</a>
     </div>
   </div>
 </main>
 
-<footer class="footer">
-  <div class="container">
-    <p class="footer-copy">© 2026 RouanetCalc · <a href="/">Voltar à calculadora</a></p>
+<footer>
+  <div class="footer-wrapper">
+    <hr class="footer-hr"/>
+    <p class="footer-copy">© 2026 Cofrinho · <a href="/">Voltar ao início</a></p>
   </div>
 </footer>
 
